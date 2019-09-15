@@ -6,6 +6,8 @@ import store from './store';
 import routes from './routes';
 import DevTools from './DevTools';
 
+import {getCountries} from './actions/actions-countries';
+
 render(
     <Provider store={store}>
     <div>
@@ -17,3 +19,4 @@ render(
     document.getElementById('root')
 );
 
+store.dispatch(getCountries());

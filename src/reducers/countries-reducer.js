@@ -2,7 +2,7 @@ import { GET_COUNTRIES, GET_COUNTRY, SEARCH_COUNTRIES, DELETE_COUNTRY, SET_CONTI
 import countriesData from '../data/countries.json';
 
 const initialState = {
-    countries: countriesData,
+    countries: [],
     selectedCountry: {},
     visibleCountries: []
 };
@@ -10,7 +10,7 @@ const initialState = {
 const countriesReducer = function (state = initialState, action) {
     switch (action.type) {
         case GET_COUNTRIES:
-            return Object.assign({}, state, {countries: state.countries});
+            return Object.assign({}, state, {countries: countriesData}) 
 
         case GET_COUNTRY:
             const selectedCountry = state.countries.find(country => country.id == action.id);
